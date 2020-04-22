@@ -2,6 +2,12 @@ import requests
 import json
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+token = os.environ.get("token")
 
 # bot command prefix
 bot = commands.Bot(command_prefix='!')
@@ -11,7 +17,6 @@ headers = {
     'x-rapidapi-host': "covid-19-data.p.rapidapi.com",
     'x-rapidapi-key': "69e32e90cemshf5f029273e5dabcp147c44jsn65211f976d36"
 }
-
 
 
 headersinspire = {
@@ -134,4 +139,4 @@ async def help(ctx):
 
 
 # Bot TOKEN
-bot.run('NjMzMDQxMTY4NzgyOTgzMjE4.XoU2yw.MS0vowyREeoW2a4QfcDWO8YoxHQ')
+bot.run(token)
